@@ -1,0 +1,33 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img width="50px" src="https://cdn-icons-png.flaticon.com/512/1208/1208622.png"/>
+      </a>
+
+      <ul *ngIf="isLoggedIn() == true" class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="home" href="#" class="nav-link px-2 text-white">Home</a></li>
+        <li><a routerLink="create" href="#" class="nav-link px-2 text-white">Create</a></li>
+        <li><a routerLink="articles" href="#" class="nav-link px-2 text-white">Posts</a></li>
+        <li>
+          <button class="btn btn-md bg-danger text-white" (click)="handleLoout()">Logout</button>
+        </li>
+      </ul>
+
+      <!-- <form *ngIf="isLoggedIn() == true" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+      </form> -->
+
+      <div *ngIf="isLoggedIn() == false" class="text-end">
+        <a routerLink="login" type="button" class="btn btn-outline-light me-2">Login</a>
+        <a routerLink="signup" type="button" class="btn btn-warning">Sign-up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container my-5">
+    <div class="p-2 bg-body-tertiary rounded-3">
+      <router-outlet></router-outlet>
+    </div>
+</div>

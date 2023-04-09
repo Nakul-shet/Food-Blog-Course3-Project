@@ -1,0 +1,51 @@
+<h2>Create your Blog Post</h2>
+<div class="container create-container">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" formControlName="title" name="title" [(ngModel)]="postDetails.title" class="form-control" id="exampleFormControlInput1" placeholder="Title of your blog post" required>
+                </div>
+                <div *ngIf="submitted && f['title'].errors">
+                    <div style="color : red" *ngIf="f['title'].errors?.['required']">
+                        Title is required
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Author Name</label>
+                    <input type="text" formControlName="author" name="author" [(ngModel)]="postDetails.author" class="form-control" id="exampleFormControlInput1" placeholder="Author of the blog post" readonly>
+                </div>
+                <!-- <div *ngIf="submitted && f['author'].errors">
+                    <div style="color : red" *ngIf="f['author'].errors?.['required']">
+                        Author is required
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label>Image</label>
+            <input type="text" formControlName="image" name="image" [(ngModel)]="postDetails.image" class="form-control" id="exampleFormControlInput1" placeholder="Paste the url of the image here" required>
+            <div *ngIf="submitted && f['image'].errors">
+                <div style="color : red" *ngIf="f['image'].errors?.['required']">
+                    Image is required
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="form-group mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Write your blog here</label>
+            <textarea formControlName="blog" name="blog" [(ngModel)]="postDetails.blog" class="form-control" id="exampleFormControlTextarea1" rows="7" required></textarea>
+            <div *ngIf="submitted && f['blog'].errors">
+                <div style="color : red" *ngIf="f['blog'].errors?.['required']">
+                    Blog Description is required
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-block bg-danger text-white">Create</button>
+    </form>
+</div>

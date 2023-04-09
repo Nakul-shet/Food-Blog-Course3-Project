@@ -1,0 +1,21 @@
+.article{
+    background-color: black;
+    padding: 20px;
+    color: white;
+    margin: 20px 0px;
+    border-radius: 10px;
+}
+
+img{
+    border-radius: 10px;
+}
+
+h3{
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    color : white;
+    border: 7px double white;
+    margin: 0px 300px;
+}
+

@@ -1,0 +1,25 @@
+<div class="container text-center">
+    <div class="actions">
+        <button routerLink="/articles" class="btn btn-danger back">
+            Back
+        </button>
+        <li class="dropdown action-btn">
+            <a class=" btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Actions
+            </a>
+            <ul class="dropdown-menu">
+              <li><button [routerLink]="['/update' , post.id]" class="dropdown-item">Update</button></li>
+              <li><button (click)="handleDelete()" class="dropdown-item">Delete</button></li>
+            </ul>
+        </li>
+    </div>
+    <br/>
+    <img class="mb-3" width="40%" src={{post.image}}/>
+    <h3>{{post.title | uppercase}}</h3>
+    <br/>
+    <div class="content">
+        {{post.blog}}
+    </div>
+    <br/>
+    <em style="color : white">- {{post.author}}</em>
+</div>

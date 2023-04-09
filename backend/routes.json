@@ -1,0 +1,12 @@
+{
+    "blogposts/list" : "blogposts/",
+    "blogposts/create" : "blogposts/",
+
+    "blogposts/get/:id" : "blogposts/:id",
+    "blogposts/delete/:id" : "blogposts/:id",
+    "blogposts/update/:id" : "blogposts/:id",
+
+    "/accounts/list" : "/accounts"
+
+    
+}
